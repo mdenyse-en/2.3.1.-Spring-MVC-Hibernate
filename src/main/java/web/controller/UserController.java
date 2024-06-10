@@ -17,7 +17,7 @@ public class UserController {
 
     @GetMapping("/")
     public String getUsers(ModelMap model) {
-        model.addAttribute("list", userService.listUsers());
+        model.addAttribute("list", userService.getUsers());
 
         return "usersList";
     }
@@ -29,7 +29,7 @@ public class UserController {
 
     @PostMapping(value = "/addUser")
     public String addUser(@ModelAttribute("user") User user) {
-        userService.add(user);
+        userService.addUser(user);
 
         return "redirect:/";
     }

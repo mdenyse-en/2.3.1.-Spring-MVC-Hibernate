@@ -14,6 +14,7 @@
 <h1>Add user:</h1>
 <form th:method="post" th:action="@{/edit}" th:object="${user}" >
     <table>
+        <input type="hidden" id="id" th:field="*{id}">
         <tr>
             <td><label for="firstName">First name:</label></td>
             <td><input type="text" id="firstName" th:field="*{firstName}"><br><br></td>
